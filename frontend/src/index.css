@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+:root {
+  --ink: #16273b;
+  --paper: #f2f5f7;
+  --pine: #1f6f5c;
+  --pine-dark: #17554a;
+  --amber: #e0a526;
+  --bs-body-font-family: 'Source Sans 3', system-ui, sans-serif;
+  --bs-body-color: var(--ink);
+  --bs-body-bg: var(--paper);
+  --bs-link-color: var(--pine);
+}
+
+h1, h2, h3, h4, h5, .brand { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.01em; }
+
+.navbar-perpus { background: var(--ink); }
+.navbar-perpus .nav-link, .navbar-perpus .brand { color: #dfe7ee; }
+.navbar-perpus .nav-link.active, .navbar-perpus .nav-link:hover { color: #fff; }
+.brand { font-size: 1.35rem; font-weight: 700; color: #fff !important; }
+
+.btn-pine { background: var(--pine); border-color: var(--pine); color: #fff; }
+.btn-pine:hover, .btn-pine:focus { background: var(--pine-dark); border-color: var(--pine-dark); color: #fff; }
+.btn-pine:disabled { background: #8fb5ab; border-color: #8fb5ab; }
+.btn:focus-visible, .form-control:focus-visible, .form-select:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* Sampul buku: dibuat dengan CSS, punggung buku di sisi kiri */
+.cover {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 4px 10px 10px 4px;
+  padding: 1rem 1rem 1rem 1.6rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 4px 6px 0 rgba(22, 39, 59, 0.12);
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.7rem;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 4px 0 0 4px;
+}
+.cover .cover-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
+.cover .cover-author { font-size: 0.85rem; opacity: 0.9; }
+
+.stat { background: #fff; border-left: 5px solid var(--pine); border-radius: 6px; padding: 1rem 1.25rem; }
+.stat .num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1; }
+.stat.warn { border-left-color: #c0392b; }
+
+.auth-card { max-width: 420px; margin: 2.5rem auto; }
+.modal-backdrop-lite { position: fixed; inset: 0; background: rgba(22, 39, 59, 0.55); z-index: 1050; overflow-y: auto; padding: 1rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
